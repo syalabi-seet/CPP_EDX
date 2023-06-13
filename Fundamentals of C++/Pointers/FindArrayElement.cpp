@@ -3,11 +3,17 @@ using namespace std;
 
 int findArrayElement(int* p, int element, int size)
 {
+    // 
     int *left = p;
-    int *right = p + size - 1;
-
-    
-    return 0;
+    while (left < (p + size))
+    {
+        if (*left == element)
+        {
+            return left - p;
+        }
+        left++;
+    }
+    return -1;
 }
 
 int main()
@@ -23,10 +29,10 @@ int main()
         cin >> array[i];
     }
 
-    int searchElement;
+    int element;
     cout << "Enter the element to search:" << endl;
-    cin >> searchElement;
+    cin >> element;
 
-    cout << findArrayElement(array, searchElement, size) << endl;
+    cout << findArrayElement(array, element, size) << endl;
     return 0;
 }
