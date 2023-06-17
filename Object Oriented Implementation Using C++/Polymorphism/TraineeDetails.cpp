@@ -17,7 +17,7 @@ class Person
         }
 };
 
-class Student: public Person
+class Student: virtual public Person
 {
     protected:
         int studentId;
@@ -33,7 +33,7 @@ class Student: public Person
         }
 };
 
-class Employee: public Person
+class Employee: virtual public Person
 {
     protected:
         int employeeId;
@@ -62,14 +62,6 @@ class Trainee: public Student, public Employee
         int getTraineeId()
         {
             return traineeId;
-        }
-        void setSocialSecurityNumber(string ssn)
-        {
-            Student::socialSecurityNumber = ssn;
-        }
-        string getSocialSecurityNumber()
-        {
-            return Student::getSocialSecurityNumber();
         }
 };
 
